@@ -22,7 +22,19 @@
     <p>Obteniendo ubicación...</p>
   </div>
 
-  <ion-button (click)="getCurrentLocation()">Mostrar Mapa</ion-button>
-  <div>
+  <ion-button expand="full" color="primary" (click)="getCurrentLocation()">Obtener Ubicación</ion-button>
+  <ion-button expand="full" color="success" [disabled]="!url" (click)="abrirMapa()">Abrir en Google Maps</ion-button>
+
+  <div style="margin-top: 20px;">
+    <ion-input
+      placeholder="Tu nombre"
+      [(ngModel)]="nombre"
+      label="Nombre:"
+      labelPlacement="floating"
+    ></ion-input>
+
+    <ion-button expand="full" color="primary" (click)="guardarEnFirebase()">
+      Guardar en Firebase
+    </ion-button>
   </div>
 </ion-content>
