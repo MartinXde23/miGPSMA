@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ubicación Actual</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="container">
+  <div *ngIf="latitude !== null && longitude !== null">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Coordenadas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Latitud:</strong> {{ latitude }}</p>
+        <p><strong>Longitud:</strong> {{ longitude }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="latitude === null && longitude === null">
+    <p>Obteniendo ubicación...</p>
+  </div>
+
+  <ion-button (click)="getCurrentLocation()">Mostrar Mapa</ion-button>
+  <div>
+  </div>
+</ion-content>
